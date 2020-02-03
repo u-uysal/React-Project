@@ -1,0 +1,11 @@
+/*  You can write your CSS styling in a separate file, 
+just save the file with the .css file extension, and
+ import it in your application */
+
+body {
+    background-color: #282c34;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+  }
