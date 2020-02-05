@@ -8,11 +8,16 @@ class App extends React.Component {
         }
     }
     
+    handleClick() {   {/* It wont work  because if you want to change state , you need to use setState() */}
+        this.state.count++
+    }
+    
     render() {
         return (
             <div>
                 <h1>{this.state.count}</h1>
-                <button>Change!</button>
+                <button onClick={this.handleClick}>Change!</button> {/* Adding onClick Events */}
+                
             </div>
         )
     }
