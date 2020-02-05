@@ -8,8 +8,9 @@ class App extends React.Component {
         }
     }
     
-    handleClick() {   {/* It wont work  because if you want to change state , you need to use setState() */}
-        this.state.count++
+    handleClick() {
+        this.setState({ count: 1 })  // Adding setState. But it wont work anyway. Because we need to bind 
+                                     // our function with App component.
     }
     
     render() {
