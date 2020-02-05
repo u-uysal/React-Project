@@ -6,19 +6,22 @@ class App extends React.Component {
         this.state = {
             count: 0
         }
+        this.handleClick = this.handleClick.bind(this) // we bound function with our App component
     }
     
     handleClick() {
-        this.setState({ count: 1 })  // Adding setState. But it wont work anyway. Because we need to bind 
-                                     // our function with App component.
+        this.setState(() => {
+            return {
+                count: this.state.count + 1
+            }
+        })
     }
     
     render() {
         return (
             <div>
                 <h1>{this.state.count}</h1>
-                <button onClick={this.handleClick}>Change!</button> {/* Adding onClick Events */}
-                
+                <button onClick={this.handleClick}>Change!</button>
             </div>
         )
     }
