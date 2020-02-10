@@ -9,6 +9,11 @@ class App extends Component {
     componentDidMount() { // Means that component just born. It runs only once
         
     }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.whatever !== this.props.whatever) {
+            // do something important here
+        }
+    }
     
     render() {
         return (
