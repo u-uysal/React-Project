@@ -14,6 +14,10 @@ class App extends Component {
             // do something important here
         }
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        // return true if want it to update
+        // return false if not
+    }
     
     render() {
         return (
