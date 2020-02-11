@@ -1,16 +1,13 @@
 import React from "react"
 
 function Conditional(props) {
-    if(props.isLoading === true) {
-        return (
-            <h1>Loading...</h1> // Ekranda ilk loading yazacak çünkü ilk render işlenecek.
-        )
-    } else {
-        return (
-            <h1>Some cool stuff about conditional rendering</h1> // render işlendikten 1.5 sn sonra componentDidMount 
-                                                                // işleneceği için 
-        )
-    }
+    return (
+        <div>
+            <h1>Navbar</h1>
+            {props.isLoading === true ? <h1>Loading...</h1> : <h1>Some cool stuff about conditional rendering</h1>}
+            <h1>Footer</h1>
+        </div>
+    )
     
 }
 
