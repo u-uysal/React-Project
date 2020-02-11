@@ -23,17 +23,22 @@ class App extends React.Component {
         this.state = {
             isLoggedIn: false
         }
-        this.handleClick = this.handleClick.bind(this) // dont forget
+        this.handleClick = this.handleClick.bind(this)
     }
     
     handleClick() {
-        console.log("I'm working!")
+        this.setState(prevState => {
+            return {
+                isLoggedIn: !prevState.isLoggedIn // true ise false ,false ise true
+            }
+        })
     }
     
-    render() {    
+    render() {   
+        let buttonText = this.state.isLoggedIn ? "LOG OUT" : "LOG IN" // tıkladığımızda yazılar değişecek
         return (
             <div>
-                <button onClick={this.handleClick}>LOG IN</button> 
+                <button onClick={this.handleClick}>{buttonText}</button>
             </div>
         )
     }
