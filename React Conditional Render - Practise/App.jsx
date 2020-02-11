@@ -17,17 +17,23 @@ Given a stateless functional component:
     // Conditional Rendering
 */
 
-class App extends React.Component { //  We changed functional component to class-based component for using state.
+class App extends React.Component {
     constructor() {
         super()
-        this.state = { 
+        this.state = {
             isLoggedIn: false
         }
+        this.handleClick = this.handleClick.bind(this) // dont forget
     }
+    
+    handleClick() {
+        console.log("I'm working!")
+    }
+    
     render() {    
         return (
             <div>
-                Code goes here
+                <button onClick={this.handleClick}>LOG IN</button> 
             </div>
         )
     }
