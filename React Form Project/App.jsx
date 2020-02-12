@@ -64,8 +64,28 @@ class App extends Component {
                     />
                     <br />
                     
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="gender"
+                            value="male"
+                            checked={this.state.gender === "Male"}
+                            onChange={this.handleChange}
+                        /> Male
+                    </label>
                     
-                    {/* Create radio buttons for gender here */}
+                    <br />
+                    
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="gender"
+                            value="female"
+                            checked={this.state.gender === "Female"}
+                            onChange={this.handleChange}
+                        /> Female
+                    </label>
+                    
                     <br />
                     
                     {/* Create select box for location here */}
@@ -78,9 +98,9 @@ class App extends Component {
                 </form>
                 <hr />
                 <h2>Entered information:</h2>
-                <p>Your name: {this.state.firstName} {this.state.lastName}</p>{/* Whenever we write name ,we can see immediately */}
+                <p>Your name: {this.state.firstName} {this.state.lastName}</p>
                 <p>Your age: {this.state.age}</p>
-                <p>Your gender: {/* Gender here */}</p>
+                <p>Your gender: {this.state.gender}</p>
                 <p>Your destination: {/* Destination here */}</p>
                 <p>
                     Your dietary restrictions: 
