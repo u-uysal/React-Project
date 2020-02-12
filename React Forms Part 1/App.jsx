@@ -13,7 +13,7 @@ class App extends Component {
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value // kutulu paranteze almasının nedeni event objesinde ulaşmak
-                                                    //istediğimiz değerin string olmasıdır
+                                                    //istediğimiz değerin string olması
         })
     }
     
