@@ -5,7 +5,8 @@ class App extends Component {
         super()
         this.state = {
             firstName: "",
-            lastName: ""
+            lastName: "",
+            isFriendly: true
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -48,9 +49,12 @@ class App extends Component {
                 }
                 
                 <textarea value={"Some default value"}/>
-                {/* kapanış etiketi olmadan da yazabiliyoruz . Bu sayede value propertysini ekliyoruz */}
                 
-                
+                <input 
+                    type="checkbox" 
+                    checked={this.state.isFriendly}
+                    // checkbox'da value propertysini kullanamıyoruz
+                />
                 
                 
                 
