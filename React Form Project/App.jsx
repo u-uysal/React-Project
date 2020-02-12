@@ -26,6 +26,14 @@ class App extends Component {
             destination: "",
             dietaryRestrictions: []
         }
+        this.handleChange = this.handleChange.bind(this)
+    }
+    
+    handleChange(event) { // for the seeing whenever I write a code , in meantime seeing on the screen
+        const {name, value} = event.target
+        this.setState({
+            [name]: value
+        })
     }
     
     render() {
@@ -34,24 +42,24 @@ class App extends Component {
                 <form>
                     <input 
                         name="firstName" 
-                        value={this.state.firstName} // for the macth
-                        onChange={this.handleChange} // for the seeing change
+                        value={this.state.firstName} 
+                        onChange={this.handleChange} 
                         placeholder="First Name" 
                     />
                     <br />
                     
                     <input 
                         name="lastName" 
-                        value={this.state.lastName}  // for the macth
-                        onChange={this.handleChange}   // for the seeing change
+                        value={this.state.lastName}
+                        onChange={this.handleChange} 
                         placeholder="Last Name" 
                     />
                     <br />
                     
                     <input 
                         name="age" 
-                        value={this.state.age} // for the macth
-                        onChange={this.handleChange} // for the seeing change
+                        value={this.state.age}
+                        onChange={this.handleChange} 
                         placeholder="Age" 
                     />
                     <br />
