@@ -24,16 +24,23 @@ class App extends Component {
             age: "",
             gender: "",
             destination: "",
-            dietaryRestrictions: []
+            isVegan: false,   // for the checkbox 
+            isKosher: false, // for the checkbox 
+            isLactoseFree: false // for the checkbox 
         }
         this.handleChange = this.handleChange.bind(this)
     }
     
     handleChange(event) {
-        const {name, value} = event.target
+        const {name, value, type, checked} = event.target 
+        type === "checkbox" ?  // we added this because checkbox has no value property
+            this.setState({
+                [name]: checked
+            })
+        :
         this.setState({
             [name]: value
-        })
+        }) 
     }
     
     render() {
@@ -88,7 +95,7 @@ class App extends Component {
                     
                     <br />
                     
-                    <select  // select and options elements are added
+                    <select 
                         value={this.state.destination} 
                         name="destination" 
                         onChange={this.handleChange}
@@ -102,7 +109,34 @@ class App extends Component {
                     
                     <br />
                     
-                    {/* Create check boxes for dietary restrictions here */}
+                    <label>
+                        <input 
+                            type="checkbox"
+                            name="isVegan"
+                            onChange={this.handleChange}  // checkbox hadling
+                            checked={this.state.isVegan}  
+                        /> Vegan?
+                    </label>
+                    <br />
+                    
+                    <label>
+                        <input 
+                            type="checkbox"
+                            name="isKosher"
+                            onChange={this.handleChange}// checkbox hadling
+                            checked={this.state.isKosher}
+                        /> Kosher?
+                    </label>
+                    <br />
+                    
+                    <label>
+                        <input 
+                            type="checkbox"
+                            name="isLactoseFree"
+                            onChange={this.handleChange} // checkbox hadling
+                            checked={this.state.isLactoseFree}
+                        /> Lactose Free?
+                    </label>
                     <br />
                     
                     <button>Submit</button>
@@ -113,10 +147,11 @@ class App extends Component {
                 <p>Your age: {this.state.age}</p>
                 <p>Your gender: {this.state.gender}</p>
                 <p>Your destination: {this.state.destination}</p>
-                <p>
-                    Your dietary restrictions: 
-                    {/* Dietary restrictions here, comma separated */}
-                </p>
+                <p>Your dietary restrictions:</p>
+                <p>Vegan: {this.state.isVegan ? "Yes" : "No"}</p>  {/* React doesnt show boolean value.*/}
+                <p>Kosher: {this.state.isKosher ? "Yes" : "No"}</p> {/* Thats why we added text manually*/}
+                <p>Lactose Free: {this.state.isLactoseFree ? "Yes" : "No"}</p>
+                
             </main>
         )
     }
