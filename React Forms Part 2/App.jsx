@@ -6,16 +6,16 @@ class App extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            isFriendly: true
+            isFriendly: false
         }
         this.handleChange = this.handleChange.bind(this)
     }
     
     handleChange(event) {
-        const {name, value} = event.target
-        this.setState({
-            [name]: value
-        })
+        const {name, value, type, checked} = event.target
+        type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
+        // burada type ve checked eklememizin sebebi checkboxlarda value değerininin olmamasıdır.
+        // bu yüzden ilk başta type kontrol edilir .
     }
     
     render() {
@@ -48,13 +48,22 @@ class App extends Component {
                      */
                 }
                 
-                <textarea value={"Some default value"}/>
-                
-                <input 
-                    type="checkbox" 
-                    checked={this.state.isFriendly}
-                    // checkbox'da value propertysini kullanamıyoruz
+                <textarea 
+                    value={"Some default value"}
+                    onChange={this.handleChange}
                 />
+                
+                <br />
+                
+                <label>
+                    <input 
+                        type="checkbox" 
+                        name="isFriendly"
+                        checked={this.state.isFriendly}
+                        onChange={this.handleChange} // aynı handleChange fonksiyonunu kullanmak istiyoruz.
+                                                     // çünkü tıkladığımızda checkbox'ın değişmesini istiyoruz
+                    /> Is friendly?
+                </label>
                 
                 
                 
