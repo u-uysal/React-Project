@@ -8,7 +8,7 @@ class App extends Component {
             lastName: "",
             isFriendly: false,
             gender: "",
-            favColor: "blue" // for the select element
+            favColor: "blue"
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -20,7 +20,7 @@ class App extends Component {
     
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}> {/* For submitting */}
                 <input 
                     type="text" 
                     value={this.state.firstName} 
@@ -88,9 +88,6 @@ class App extends Component {
                 
                 <label>Favorite Color:</label>
                 <select 
-
-                    //select element value değerine sahiptir.
-                
                     value={this.state.favColor}
                     onChange={this.handleChange}
                     name="favColor"
@@ -105,6 +102,8 @@ class App extends Component {
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
                 <h2>You are a {this.state.gender}</h2>
                 <h2>Your favorite color is {this.state.favColor}</h2>
+                <button>Submit</button>
+                {/* For  submitting */}
             </form>
         )
     }
