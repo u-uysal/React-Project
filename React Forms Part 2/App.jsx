@@ -7,7 +7,8 @@ class App extends Component {
             firstName: "",
             lastName: "",
             isFriendly: false,
-            gender: "" // For the radio button
+            gender: "",
+            favColor: "blue" // for the select element
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -40,7 +41,7 @@ class App extends Component {
                     /**
                      * Other useful form elements:
                      * 
-                     
+                     *  <textarea /> element
                      *  <input type="checkbox" />
                      *  <input type="radio" />
                      *  <select> and <option> elements
@@ -63,15 +64,12 @@ class App extends Component {
                     /> Is friendly?
                 </label>
                 <br />
-
-
-                {/* Radio buttonları hem check özelliğine hem de value özelliklerine sahiptirler. */}
                 <label>
                     <input 
                         type="radio" 
                         name="gender"
                         value="male"
-                        checked={this.state.gender === "male"} // cinsiyeti kontrol ediyoruz
+                        checked={this.state.gender === "male"}
                         onChange={this.handleChange}
                     /> Male
                 </label>
@@ -81,14 +79,32 @@ class App extends Component {
                         type="radio" 
                         name="gender"
                         value="female"
-                        checked={this.state.gender === "female"}// cinsiyeti kontrol ediyoruz
+                        checked={this.state.gender === "female"}
                         onChange={this.handleChange}
                     /> Female
                 </label>
+                {/* Formik */}
+                <br />
                 
+                <label>Favorite Color:</label>
+                <select 
+
+                    //select element value değerine sahiptir.
+                
+                    value={this.state.favColor}
+                    onChange={this.handleChange}
+                    name="favColor"
+                >
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                </select>
                 
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
-                <h2>You are a {this.state.gender}</h2> 
+                <h2>You are a {this.state.gender}</h2>
+                <h2>Your favorite color is {this.state.favColor}</h2>
             </form>
         )
     }
