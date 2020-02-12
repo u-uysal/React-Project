@@ -12,7 +12,8 @@ class App extends Component {
     
     handleChange(event) {
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value // kutulu paranteze almasının nedeni event objesinde ulaşmak
+                                                    //istediğimiz değerin string olmasıdır
         })
     }
     
@@ -24,7 +25,7 @@ class App extends Component {
                     value={this.state.firstName} 
                     name="firstName" 
                     placeholder="First Name" 
-                    onChange={this.handleChange} 
+                    onChange={this.handleChange} // For the seeing all the changes in React
                 />
                 <br />
                 <input 
