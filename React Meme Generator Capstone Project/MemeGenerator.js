@@ -10,6 +10,7 @@ class MemeGenerator extends Component {
             allMemeImgs: []
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     
     componentDidMount() {
@@ -21,20 +22,28 @@ class MemeGenerator extends Component {
             })
     }
     
-    /**
-     * Create the onChagne handler method
-     * It should update the corresponding state on every change of the input box
-     */
-    
     handleChange(event) {
         const {name, value} = event.target
         this.setState({ [name]: value })
     }
     
+    /**
+     * Create a method that, when the "Gen" button is clicked, chooses one of the
+     * memes from our `allMemeImgs` array at random and makes it so that is the
+     * meme image that shows up in the bottom portion of our meme generator site (`.url`)
+     */
+    
+    handleSubmit(event) {
+        event.preventDefault()
+        const randNum = Math.floor(Math.random() * this.state.allMemeImgs.length)
+        const randMemeImg = this.state.allMemeImgs[randNum].url
+        this.setState({ randomImg: randMemeImg })
+    }
+    
     render() {
         return (
             <div>
-                <form className="meme-form">
+                <form className="meme-form" onSubmit={this.handleSubmit}>
                     <input 
                         type="text"
                         name="topText"
@@ -52,7 +61,7 @@ class MemeGenerator extends Component {
                 
                     <button>Gen</button>
                 </form>
-                <div className="meme"> 
+                <div className="meme">
                     <img src={this.state.randomImg} alt="" />
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
