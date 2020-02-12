@@ -16,21 +16,31 @@ class MemeGenerator extends Component {
             .then(response => response.json())
             .then(response => {
                 const {memes} = response.data
-                this.setState({ allMemeImgs: memes })// We dont care about previos state. We can write like this.
+                console.log(memes[0])
+                this.setState({ allMemeImgs: memes })
             })
     }
-    /**
-     * We'll be using an API that provides a bunch of meme images.
-     * 
-     * Your task:
-     * make an API call to "https://api.imgflip.com/get_memes" and save the 
-     * data that comes back (`response.data.memes`) to a new state property
-     * called `allMemeImgs`. (The data that comes back is an array)
-     */
     
     render() {
         return (
-            <h1>MEME GENERATOR SECTION</h1>
+            <div>
+                <form className="meme-form">
+                    <input 
+                        type="text"
+                        name="topText"
+                        placeholder="Top Text"
+                        value={this.state.topText}
+                    /> 
+                    <input 
+                        type="text"
+                        name="bottomText"
+                        placeholder="Bottom Text"
+                        value={this.state.boText}
+                    /> 
+                
+                    <button>Gen</button>
+                </form>
+            </div>
         )
     }
 }
