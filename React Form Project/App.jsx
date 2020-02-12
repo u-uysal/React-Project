@@ -18,7 +18,14 @@ import React, {Component} from "react"
 class App extends Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            firstName: "",
+            lastName: "",
+            age: 0,
+            gender: "",
+            destination: "",
+            dietaryRestrictions: []
+        }
     }
     
     render() {
