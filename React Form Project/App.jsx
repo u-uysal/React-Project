@@ -21,7 +21,7 @@ class App extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            age: 0,
+            age: "",
             gender: "",
             destination: "",
             dietaryRestrictions: []
@@ -29,7 +29,7 @@ class App extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
     
-    handleChange(event) { // for the seeing whenever I write a code , in meantime seeing on the screen
+    handleChange(event) {
         const {name, value} = event.target
         this.setState({
             [name]: value
@@ -78,8 +78,8 @@ class App extends Component {
                 </form>
                 <hr />
                 <h2>Entered information:</h2>
-                <p>Your name: {/* First and last name here */}</p>
-                <p>Your age: {/* Age here */}</p>
+                <p>Your name: {this.state.firstName} {this.state.lastName}</p>{/* Whenever we write name ,we can see immediately */}
+                <p>Your age: {this.state.age}</p>
                 <p>Your gender: {/* Gender here */}</p>
                 <p>Your destination: {/* Destination here */}</p>
                 <p>
