@@ -5,10 +5,12 @@ import React, {useState} from "react"
 
 function App() {
     const [count, setCount] = useState(0)
+    const [answer, setAnswer] = useState("Yes") //If you want to add something in state ,better way is adding apart 
     
     function increment() {
         setCount(prevCount => prevCount + 1)
     }
+    
     function decrement() {
         setCount(prevCount => prevCount - 1)
     }
