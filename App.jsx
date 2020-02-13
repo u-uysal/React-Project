@@ -2,20 +2,18 @@ import React, {Component} from "react"
 
 class App extends Component {
     // Change to use class properties
-    constructor() {
+    state = {
+        firstName: ""
+    }
+    /* constructor() {
         super()
         this.state = {
             firstName: ""
         }
-        // If we use arrow function for the function , we dont have to bind function and state no longer.
-
-       // this.handleChange = this.handleChange.bind(this)
-    }
+    } */
     
     // Change to use arrow functions
-    
-    //handleChange(event) {   
-        handleChange= (event) => {
+    handleChange = (event) => {
         const { name, value } = event.target
         this.setState({
             [name]: value
