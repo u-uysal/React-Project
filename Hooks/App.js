@@ -1,17 +1,19 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
+
+// Convert the class below to a functional component that uses the useState hook to initalize a count vartiable to 0 and display the count on the screen.
+// Don't worry about the part where the button changes the count quite yet, that's what you're here to learn about!
 
 function App() {
-    const [ value ] = useState("No") // array destructuring
-    console.log(value)
-    
+    const [count] = useState(0) // we assign 0 as a initial value
     
     return (
         <div>
-        <h1>Is state important to know? {value}</h1>      {/* We dont need to write index number anymore.Because 
-                                                               we use array destructuring*/}
+            <h1>{count}</h1>
+            <button>Change!</button>
         </div>
     )
 }
+
 
 
 export default App
