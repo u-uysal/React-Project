@@ -4,12 +4,12 @@ import React, {useState} from "react"
 // Don't worry about the part where the button changes the count quite yet, that's what you're here to learn about!
 
 function App() {
-    const [count] = useState(0) // we assign 0 as a initial value
+    const [count, setCount] = useState(0) // setCount function provides us to changing to value of Count
     
     return (
         <div>
             <h1>{count}</h1>
-            <button>Change!</button>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Change!</button>
         </div>
     )
 }
