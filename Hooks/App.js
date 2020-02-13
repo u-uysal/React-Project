@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 
 function App() {
-    const value = useState()
-    console.log(value) // OUTPUT : [null, ƒ()]
+    const value = useState(true)
+    console.log(value) // Output : [true, ƒ()]
     
     return (
         <div>
