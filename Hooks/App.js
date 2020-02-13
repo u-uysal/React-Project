@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 
 function App() {
-    const value = useState(true)
-    console.log(value) // Output : [true, ƒ()]
+    const value = useState("Yes")
+    console.log(value)
     
     return (
         <div>
-            <h1>Is state important to know? Yes</h1>
+          <h1>Is state important to know? {value[0]}</h1>   {/* value[0] = Yes */}
         </div>
     )
 }
