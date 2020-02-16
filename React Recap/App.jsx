@@ -7,7 +7,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <ul>{this.state.tags.map((tag)=><li>{tag}</li>)}</ul>
+                <ul>{this.state.tags.map((tag)=><li key = {tag}>{tag}</li>)}</ul>
             </div>
         )
     }
