@@ -23,3 +23,12 @@ function App() {
 }
 
 export default App
+
+
+// Object Destructuring
+
+formatCounter() {
+    //return this.state.count === 0 ? "Zero " : this.state.count;
+    const { count } = this.state;
+    return count === 0 ? "Zero " : count;
+}
